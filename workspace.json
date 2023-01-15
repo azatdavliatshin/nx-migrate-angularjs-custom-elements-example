@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
+    "angular-components": "libs/angular-components",
     "realworld": "apps/realworld",
     "realworld-e2e": "apps/realworld-e2e"
   }

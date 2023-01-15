@@ -1,0 +1,42 @@
+{
+  "projectType": "library",
+  "root": "libs/angular-components",
+  "sourceRoot": "libs/angular-components/src",
+  "prefix": "nx-migrate-angularjs",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/angular-components"],
+      "options": {
+        "project": "libs/angular-components/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/angular-components/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/angular-components/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "main": "libs/angular-components/src/test.ts",
+        "tsConfig": "libs/angular-components/tsconfig.spec.json",
+        "karmaConfig": "libs/angular-components/karma.conf.js"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/angular-components/src/**/*.ts",
+          "libs/angular-components/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
