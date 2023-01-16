@@ -1,0 +1,7 @@
+<ul class="error-messages" *ngIf="!!errorsList">
+  <div *ngFor="let item of errorsList | keyvalue">
+    <li *ngFor="let error of item.value">
+      {{item.key}} {{error}}
+    </li>
+  </div>
+</ul>
